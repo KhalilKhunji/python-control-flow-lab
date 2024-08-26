@@ -19,6 +19,25 @@
 
 def guess_number():
     # Your control flow logic goes here
+    target = 50
+    for x in range(5):
+        if (x == 4):
+            print('Last chance!')
+        guess = input('Guess a number within the range of 1 to 100 ')
+        if (int(guess) > 100 or int(guess) < 0):
+            print('Value not within range, one chance used up!')
+        elif (int(guess) == target):
+            print('Congratulations, you guessed correctly!')
+            break
+        elif (x == 4):
+            print('Sorry, you failed to guess the number in five attempts.')
+        elif ((int(guess) - target) < 0):
+            print('Your guess is too low!')
+        elif ((int(guess) - target) > 0):
+            print('Your guess is too high!')
+        else:
+            print('Incorrect input, one chance used up!')
+
 
 # Call the function
 guess_number()
